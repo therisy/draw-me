@@ -36,7 +36,12 @@ export default function Home() {
             endY.current = e.clientY;
 
             ctx.strokeStyle = "white";
-            ctx.lineWidth = 4;
+            ctx.lineWidth = 6;
+            ctx.lineCap = 'round'
+            ctx.lineJoin = 'round'
+
+            ctx.imageSmoothingEnabled = true;
+
             ctx.stroke();
         }
     }
