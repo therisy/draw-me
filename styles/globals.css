@@ -22,8 +22,13 @@ a {
     border-radius: 5px;
     border: 0 !important;
     outline: none;
-    color: #fff;
+    color: aqua;
     padding: 0.5rem 1rem;
     font-size: 4rem;
     font-weight: 600;
+}
+
+canvas {
+    position: absolute;
+    z-index: 1 !important;
 }
