@@ -35,8 +35,22 @@ export default function Home() {
             endX.current = e.clientX;
             endY.current = e.clientY;
 
+            ctx.strokeStyle = "white";
+            ctx.lineWidth = 4;
             ctx.stroke();
         }
+    }
+
+    function addInput() {
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.style.position = 'absolute';
+        input.style.left = endX.current + 'px';
+        input.style.top = endY.current + 'px';
+        input.className = "text-box";
+
+        document.body.appendChild(input);
+        input.focus();
     }
 
     function handleResize() {
@@ -54,6 +68,8 @@ export default function Home() {
         canvas.current?.addEventListener("mouseup", handleMouseUp);
 
         canvas.current?.addEventListener("mousemove", handleMouseMove);
+
+        canvas.current?.addEventListener("dblclick", addInput);
 
         window.addEventListener("resize", handleResize);
     }, []);
